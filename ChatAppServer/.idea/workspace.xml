@@ -8,13 +8,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1UWMH5Gn7zPRAVJ4dNrVzeDKZUr" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChatAppClient" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.project.server" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -40,11 +53,11 @@
       </method>
     </configuration>
     <configuration name="ServerGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.project.server.ServerGUI" />
+      <option name="MAIN_CLASS_NAME" value="com.project.server.view.ServerGUI" />
       <module name="ChatAppServer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.project.server.*" />
+          <option name="PATTERN" value="com.project.server.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,6 +86,9 @@
       <option name="presentableId" value="Default" />
       <updated>1575467806608</updated>
       <workItem from="1575467808811" duration="220000" />
+      <workItem from="1576419145237" duration="6894000" />
+      <workItem from="1576437455330" duration="271000" />
+      <workItem from="1576438080463" duration="745000" />
     </task>
     <servers />
   </component>
