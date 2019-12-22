@@ -1,13 +1,13 @@
 package com.lloseng.ocsf.client;
 
-import com.project.Message;
-import com.project.client.controller.ChatController;
+import com.model.Message;
 
-import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyClient extends AbstractClient {
 
-    private final ChatController controller;
+    private final List<String> messages = new ArrayList<>();
 
     /**
      * Constructs the client.
@@ -15,17 +15,20 @@ public class MyClient extends AbstractClient {
      * @param host the server's host name.
      * @param port the port number.
      */
-    public MyClient(String host,int port,ChatController controller) {
+    public MyClient(String host,int port) {
         super(host, port);
-        this.controller = controller;
     }
 
     @Override
     protected void handleMessageFromServer(Object msg) {
         Message message = (Message) msg;
-        SwingUtilities.invokeLater(() -> {
-            controller.messageReceived(message.getDate() + " " + message.getUser().getUsername() + " : " + message.getBody() + "\n\n");
-        });
+        messages.add(message.getDate() + " " + message.getUser().getUsername() + " : " + message.getBody() + "\n\n");
+     }
+
+    public List<String> getMessages(){
+        List<String> messages = new ArrayList<>(this.messages);
+        this.messages.clear();
+        return messages;
     }
 
 }

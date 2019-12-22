@@ -1,32 +1,25 @@
 package com.project.client.controller;
 
-import com.lloseng.ocsf.client.AbstractClient;
-import com.project.client.view.ClientGUI;
+import com.project.client.view.ClientView;
 
 public class ViewController {
 
-    private final ClientGUI clientGUI;
+    private final ClientView view;
 
-    private AbstractClient client;
-
-    public ViewController(ClientGUI clientGUI) {
-        this.clientGUI = clientGUI;
+    public ViewController(ClientView view) {
+        this.view = view;
     }
 
     public void showError(String error) {
-        clientGUI.showError(error);
+        view.showError(error);
     }
 
     public void requestForChatView() {
-        clientGUI.switchToChatGUI();
+        view.switchToChatGUI();
     }
 
     public void requestForConnectionView() {
-
-        clientGUI.switchToConnectView();
+        view.switchToConnectView();
     }
 
-    public void setClient(AbstractClient client) {
-        this.client = client;
-    }
 }

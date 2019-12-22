@@ -1,29 +1,29 @@
 package com.project.server.controller;
 
-import com.project.server.view.ServerGUI;
+import com.project.server.view.ServerView;
 
 public class ViewController {
 
-    private final ServerGUI serverGUI;
+    private final ServerView view;
 
-    public ViewController(ServerGUI serverGUI) {
-        this.serverGUI = serverGUI;
+    public ViewController(ServerView view) {
+        this.view = view;
     }
 
     public void switchToStartServer() {
-        serverGUI.switchToStartServer();
+        view.switchToStartServer();
     }
 
-    public void switchToStatusServer() {
-        serverGUI.switchToServerStatus();
+    public void switchToStatusServer(int port) {
+        view.switchToServerStatus(port);
     }
 
     public void showError(String error) {
-        serverGUI.showError(error);
+        view.showError(error);
     }
 
     public void showMessage(String message) {
-        serverGUI.showMessage(message);
+        view.showMessage(message);
     }
 
 

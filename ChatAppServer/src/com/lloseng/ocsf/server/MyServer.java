@@ -1,8 +1,6 @@
 package com.lloseng.ocsf.server;
+import com.model.*;
 
-import com.project.Message;
-
-import javax.swing.*;
 import java.time.LocalDateTime;
 
 public class MyServer extends AbstractServer  {
@@ -24,5 +22,4 @@ public class MyServer extends AbstractServer  {
 
         sendToAllClients(message);
     }
-
 }

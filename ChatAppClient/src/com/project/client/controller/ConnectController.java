@@ -1,7 +1,7 @@
 package com.project.client.controller;
 
-import com.lloseng.ocsf.client.AbstractClient;
-import com.project.User;
+import com.lloseng.ocsf.client.MyClient;
+import com.model.User;
 
 import java.io.IOException;
 
@@ -9,20 +9,20 @@ public class ConnectController {
 
     private User user;
 
-    private AbstractClient client;
+    private final MyClient client;
 
     private final ViewController viewController;
 
-    public ConnectController(ViewController viewController) {
+    public ConnectController(ViewController viewController, MyClient client) {
+        if (client.isConnected()) {
+            throw new IllegalArgumentException("The client is still connected!");
+        }
+        this.client = client;
         this.viewController = viewController;
     }
 
     public User getUser(){
         return user;
-    }
-
-    public void setClient(AbstractClient client) {
-        this.client = client;
     }
 
     public void connect(int portValue, String hostValue, String usernameValue) {

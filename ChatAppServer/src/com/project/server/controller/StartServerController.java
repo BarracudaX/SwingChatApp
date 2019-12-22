@@ -1,6 +1,7 @@
 package com.project.server.controller;
 
 import com.lloseng.ocsf.server.AbstractServer;
+import com.lloseng.ocsf.server.MyServer;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -9,9 +10,9 @@ public class StartServerController {
 
     private final ViewController viewController;
 
-    private final AbstractServer server;
+    private final MyServer server;
 
-    public StartServerController(ViewController viewController, AbstractServer server) {
+    public StartServerController(ViewController viewController, MyServer server) {
         this.viewController = viewController;
         this.server = server;
     }
@@ -28,13 +29,12 @@ public class StartServerController {
         }
 
         server.setPort(port);
-
         try {
             server.listen();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        viewController.switchToStatusServer();
+        viewController.switchToStatusServer(port);
     }
 
     private void wrongPortNumber() {

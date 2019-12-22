@@ -247,21 +247,21 @@ public class ConnectionToClient extends Thread
         // and then sends it for handling by the server
         
         try { // Added in version 2.31
-        
+
           // wait to receive an object
           msg = input.readObject();
-                  
+
           if (!readyToStop && handleMessageFromClient(msg)) // Added in version 2.2
           {
             server.receiveMessageFromClient(msg, this);
           }
           
         } catch(ClassNotFoundException ex) { // when an unknown class is received
-        
+
           server.clientException(this, ex);
           
         } catch (RuntimeException ex) { // thrown by handleMessageFromClient or receiveMessageFromClient
-        
+
           server.clientException(this, ex);
         }
       }

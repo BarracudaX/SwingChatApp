@@ -1,32 +1,31 @@
 package com.project.client.controller;
 
-import com.lloseng.ocsf.client.AbstractClient;
-import com.project.Message;
-import com.project.User;
-import com.project.client.view.ChatGUI;
+import com.lloseng.ocsf.client.MyClient;
+import com.model.Message;
+import com.project.client.view.ChatView;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatController {
 
     private final ViewController viewController;
 
-    private ChatGUI chatGUI;
+    private ChatView chatView;
 
-    private AbstractClient client;
+    private MyClient client;
 
     private final ConnectController connectController;
 
-    public ChatController(ViewController viewController,ConnectController connectController) {
+    private final List<String> messages = new ArrayList<>();
+
+    public ChatController(ViewController viewController, ConnectController connectController, MyClient client) {
+        if (!client.isConnected()) {
+            throw new IllegalArgumentException("The client is not connected!");
+        }
         this.viewController = viewController;
         this.connectController = connectController;
-    }
-
-    public void setChatGUI(ChatGUI chatGUI) {
-        this.chatGUI = chatGUI;
-    }
-
-    public void setClient(AbstractClient client) {
         this.client = client;
     }
 
@@ -48,7 +47,18 @@ public class ChatController {
         }
     }
 
-    public void messageReceived(String message) {
-        chatGUI.appendMessage(message);
+    public boolean hasNewMessages() {
+        messages.addAll(client.getMessages());
+        return !messages.isEmpty();
+    }
+
+    public String getNextMessage() {
+        messages.addAll(client.getMessages());
+
+        if (!messages.isEmpty()) {
+            return messages.remove(0);
+        }
+
+        return "";
     }
 }
