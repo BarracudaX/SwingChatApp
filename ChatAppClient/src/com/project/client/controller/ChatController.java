@@ -61,4 +61,8 @@ public class ChatController {
 
         return "";
     }
+
+    public String getUsername() {
+        return connectController.getUser().getUsername();
+    }
 }

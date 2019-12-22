@@ -15,7 +15,7 @@ public class ViewController {
     }
 
     public void requestForChatView() {
-        view.switchToChatGUI();
+        view.switchToChatView();
     }
 
     public void requestForConnectionView() {

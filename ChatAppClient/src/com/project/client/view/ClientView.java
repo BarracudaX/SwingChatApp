@@ -64,7 +64,7 @@ public class ClientView extends JFrame {
         pack();
     }
 
-    public void switchToChatGUI() {
+    public void switchToChatView() {
 
         ChatController controller = new ChatController(viewController, connectController, client);
 

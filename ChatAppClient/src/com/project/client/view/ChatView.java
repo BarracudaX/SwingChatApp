@@ -36,6 +36,8 @@ public class ChatView extends JPanel {
 
     private final JTextArea messageArea = new JTextArea();
 
+    private final JLabel usernameLabel = new JLabel();
+
     private final ExecutorService messageChecker = Executors.newSingleThreadExecutor();
 
     public ChatView(ChatController controller) {
@@ -53,12 +55,12 @@ public class ChatView extends JPanel {
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         styleBuilder.setBackgroundAsDark(this)
-                .setFont(chatArea, chatLabel, messageArea, messageLabel, sendButton, disconnectButton)
+                .setFont(chatArea, chatLabel, messageArea, messageLabel, sendButton, disconnectButton,usernameLabel)
                 .setNotEditable(chatArea).setBackgroundAsBlue(sendButton).setBackgroundAsRed(disconnectButton)
-                .setForegroundAsWhite(chatArea,messageArea,sendButton,disconnectButton,chatLabel,messageLabel)
+                .setForegroundAsWhite(chatArea,messageArea,sendButton,disconnectButton,chatLabel,messageLabel,usernameLabel)
                 .setTextAreaSize(chatArea,messageArea)
                 .setCursorAsHand(disconnectButton,sendButton)
-                .setBackgroundAsGrey(chatArea,messageArea);
+                .setBackgroundAsGrey(chatArea,messageArea).setHorizontalAlignmentToCenter(usernameLabel);
 
         Utils.GridBagConstraintBuilder builder = new Utils.GridBagConstraintBuilder();
         builder.reset().setRow(0).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
@@ -67,27 +69,34 @@ public class ChatView extends JPanel {
         add(disconnectButton, builder.build());
 
         builder.reset().setRow(1).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
-                .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 10));
-        add(chatLabel, builder.build());
-
-        builder.reset().setRow(1).setColumn(1).setRowWeight(25).setColumnWeight(25).setFill(Utils.Fill.BOTH)
-                .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 5));
-        add(chatScrollPane, builder.build());
+                .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 20, 5))
+                .setColumnWidth(2);
+        add(usernameLabel, builder.build());
 
         builder.reset().setRow(2).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
                 .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 10));
+        add(chatLabel, builder.build());
+
+        builder.reset().setRow(2).setColumn(1).setRowWeight(25).setColumnWeight(25).setFill(Utils.Fill.BOTH)
+                .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 5));
+        add(chatScrollPane, builder.build());
+
+        builder.reset().setRow(3).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
+                .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 10));
         add(messageLabel, builder.build());
 
-        builder.reset().setRow(2).setColumn(1).setRowWeight(5).setColumnWeight(25).setFill(Utils.Fill.BOTH)
+        builder.reset().setRow(3).setColumn(1).setRowWeight(5).setColumnWeight(25).setFill(Utils.Fill.BOTH)
                 .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 5, 5));
         add(messageScrollPane, builder.build());
 
-        builder.reset().setRow(3).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
+        builder.reset().setRow(4).setColumn(0).setRowWeight(1).setColumnWeight(1).setFill(Utils.Fill.BOTH)
                 .setAnchor(Utils.Anchor.CENTER).setInsets(new Insets(5, 5, 20, 5)).setColumnWidth(2);
         add(sendButton, builder.build());
 
         disconnectButton.addActionListener(this::disconnectButtonClick);
         sendButton.addActionListener(this::sendMessageButtonClick);
+
+        usernameLabel.setText("Your Username Is : "+controller.getUsername());
 
         startCheckMessages();
     }
