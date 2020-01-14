@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iee.ihu.swingchatapplication.apps;
+package apps;
 
-import iee.ihu.swingchatapplication.client.controllers.ClientViewController;
-import iee.ihu.swingchatapplication.server.MyServer;
-import iee.ihu.swingchatapplication.server.controllers.ServerStatusController;
-import iee.ihu.swingchatapplication.server.controllers.ServerViewController;
-import iee.ihu.swingchatapplication.server.controllers.StartServerController;
-import iee.ihu.swingchatapplication.server.views.StartView;
-import iee.ihu.swingchatapplication.server.views.StatusView;
+import client.controllers.ClientViewController;
+import server.MyServer;
+import server.controllers.ServerStatusController;
+import server.controllers.ServerViewController;
+import server.controllers.StartServerController;
+import server.views.StartView;
+import server.views.StatusView;
 import javax.swing.*;
 import java.awt.*;
 import java.net.UnknownHostException;

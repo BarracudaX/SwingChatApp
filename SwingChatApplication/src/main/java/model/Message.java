@@ -1,4 +1,4 @@
-package iee.ihu.swingchatapplication.model;
+package model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

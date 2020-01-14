@@ -1,9 +1,9 @@
-package iee.ihu.swingchatapplication.client;
+package client;
 
 
 
 import framework.client.AbstractClient;
-import iee.ihu.swingchatapplication.model.Message;
+import model.Message;
 
 import java.util.ArrayList;
 import java.util.List;

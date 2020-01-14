@@ -1,8 +1,8 @@
-package iee.ihu.swingchatapplication.client.controllers;
+package client.controllers;
 
-import iee.ihu.swingchatapplication.client.MyClient;
-import iee.ihu.swingchatapplication.model.Message;
-import iee.ihu.swingchatapplication.client.views.ChatView;
+import client.MyClient;
+import model.Message;
+import client.views.ChatView;
 
 import java.io.IOException;
 import java.util.ArrayList;

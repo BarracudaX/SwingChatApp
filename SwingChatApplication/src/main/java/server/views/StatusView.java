@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iee.ihu.swingchatapplication.server.views;
+package server.views;
 
-import iee.ihu.swingchatapplication.server.controllers.ServerStatusController;
+import server.controllers.ServerStatusController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

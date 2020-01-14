@@ -1,6 +1,6 @@
-package iee.ihu.swingchatapplication.client.controllers;
+package client.controllers;
 
-import iee.ihu.swingchatapplication.apps.Client;
+import apps.Client;
 
 public class ClientViewController {
 

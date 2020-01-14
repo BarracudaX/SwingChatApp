@@ -1,9 +1,9 @@
-package iee.ihu.swingchatapplication.server;
+package server;
 
 
+import model.Message;
 import framework.server.AbstractServer;
 import framework.server.ConnectionToClient;
-import iee.ihu.swingchatapplication.model.*;
 
 import java.time.LocalDateTime;
 

@@ -1,7 +1,7 @@
-package iee.ihu.swingchatapplication.client.controllers;
+package client.controllers;
 
-import iee.ihu.swingchatapplication.client.MyClient;
-import iee.ihu.swingchatapplication.model.User;
+import client.MyClient;
+import model.User;
 
 import java.io.IOException;
 

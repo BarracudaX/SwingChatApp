@@ -1,6 +1,6 @@
-package iee.ihu.swingchatapplication.server.controllers;
+package server.controllers;
 
-import iee.ihu.swingchatapplication.apps.ServerView;
+import apps.ServerView;
 
 
 public class ServerViewController {

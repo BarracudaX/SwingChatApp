@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iee.ihu.swingchatapplication.apps;
+package apps;
 
-import iee.ihu.swingchatapplication.client.MyClient;
-import iee.ihu.swingchatapplication.client.controllers.ChatController;
-import iee.ihu.swingchatapplication.client.controllers.ConnectController;
-import iee.ihu.swingchatapplication.client.controllers.ClientViewController;
-import iee.ihu.swingchatapplication.client.views.ChatView;
+import client.MyClient;
+import client.controllers.ChatController;
+import client.controllers.ConnectController;
+import client.controllers.ClientViewController;
+import client.views.ChatView;
 import utils.GeneralStyle;
-import iee.ihu.swingchatapplication.client.views.ConnectionView;
-import iee.ihu.swingchatapplication.client.views.ConnectionView;
+import client.views.ConnectionView;
+import client.views.ConnectionView;
 
 import javax.swing.*;
 import java.awt.*;

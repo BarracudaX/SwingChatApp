@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iee.ihu.swingchatapplication.client.views;
+package client.views;
 
-import iee.ihu.swingchatapplication.client.controllers.ConnectController;
+import client.controllers.ConnectController;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;

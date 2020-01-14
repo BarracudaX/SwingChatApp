@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iee.ihu.swingchatapplication.client.views;
+package client.views;
 
 import utils.GeneralStyle;
 import utils.Utils;
-import iee.ihu.swingchatapplication.client.controllers.ChatController;
+import client.controllers.ChatController;
 
 import javax.swing.*;
 import java.awt.*;

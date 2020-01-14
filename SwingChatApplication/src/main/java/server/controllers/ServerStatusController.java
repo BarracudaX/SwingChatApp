@@ -1,7 +1,7 @@
-package iee.ihu.swingchatapplication.server.controllers;
+package server.controllers;
 
 
-import iee.ihu.swingchatapplication.server.MyServer;
+import server.MyServer;
 import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
